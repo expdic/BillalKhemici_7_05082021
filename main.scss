@@ -1,0 +1,157 @@
+html {
+    display: block;
+}
+
+body {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    margin: auto;
+    max-width: 75rem;
+}
+
+header {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+
+    img {
+        height: 8rem;
+    }
+
+}
+
+
+.barderecherche {
+    display: flex;
+    height: 4rem;
+    width: 100%;
+    margin-bottom: 2rem;
+
+    input {
+        border-radius: 0.313rem 0 0 0.313rem;
+        border: none;
+        margin: 0;
+        padding: 1rem;
+        width: 100%;
+        background-color: #E7E7E7;
+        font-size: 100%;
+
+    }
+
+    button {
+        border: none;
+        padding-right: 1rem;
+        background-color: #E7E7E7;
+        border-radius: 0 0.313rem 0.313rem 0;
+    }
+
+}
+
+
+
+
+main {
+    align-items: center;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 2fr);
+    grid-template-rows: 1fr;
+    justify-content: center;
+
+
+}
+
+article {
+    display: block;
+}
+
+.divvide {
+    background-color: rgb(253, 168, 98);
+    border-radius: 0.313rem 0.313rem 0 0;
+    height: 9.375rem;
+}
+
+.sectioninfo {
+    padding: 0.5rem 1rem 2rem 1rem;
+    background-color: #e7e7e7bd;
+    border-radius: 0 0 0.313rem 0.313rem;
+    display: block;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        font-size: 10px;
+        margin: 0;
+
+        .pname {
+            display: block;
+            font-size: 1.5em;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+        }
+
+        .ptime {
+            display: block;
+            font-size: 1.5em;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+            flex-direction: row-reverse;
+            margin-right: 0.1rem;
+
+            i {
+                margin-left: 0.2rem;
+            }
+
+        }
+    }
+
+    aside {
+        align-items: center;
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        justify-content: center;
+        height: 110px;
+        font-size: 12px;
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            align-self: start;
+            font-size: 12px;
+
+        }
+    }
+
+    .pdescription {
+        height: 118px;
+        margin: 0;
+        overflow: hidden;
+        width: 100%;
+        display: block;
+
+    }
+
+
+}
+
+
+.divnoresult {
+    font-size: 2rem;
+    font-style: italic;
+    grid-column: span 3;
+    text-align: center;
+}
