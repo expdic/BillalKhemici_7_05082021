@@ -1,18 +1,19 @@
 
-function verifrecipes(data) {
-    var recipa = data;
-    if (recipa.length == 0) {
+function verifrecipes(recipa) {
+
+    if (recipa.length == 0) { // si mon tableau est vide 
         var divnoresult = document.createElement('div');
         divnoresult.className = 'divnoresult';
         var pnoresult = document.createElement('p');
         pnoresult.className = 'pnoresult';
         pnoresult.textContent = ' Veuillez renouveler vos recherches car nous n avons rien trouvé '
         divnoresult.appendChild(pnoresult);
-        main.appendChild(divnoresult);
+        main.appendChild(divnoresult); // AFFICHER qu'il n'y pas de résultats 
     }
+    
     else (
-        showrecipes(recipa)
+        showrecipes(recipa) // SINON, afficher les résultats .
     )
 }
 
-verifrecipes(recipes)
+verifrecipes(recipes) 

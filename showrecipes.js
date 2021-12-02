@@ -1,5 +1,5 @@
-function showrecipes(data) {
-    var recipvar = data;
+function showrecipes(recipvar) {
+
     for (var i = 0; i < recipvar.length; i++) {
         var myArticle = document.createElement('article');
         var divvide = document.createElement('div');
@@ -44,7 +44,7 @@ function showrecipes(data) {
             
         }
 
-
+        
         main.appendChild(myArticle);
         myArticle.appendChild(divvide);
         myArticle.appendChild(sectioninfo);
@@ -56,8 +56,12 @@ function showrecipes(data) {
         aside.appendChild(pul);
         aside.appendChild(pdescription);
         
+        
+        
+
+        
             
         
     }
 
-}
+} // cette fonction a pour but d'afficher les recettes et les mettres dans des balises html 
