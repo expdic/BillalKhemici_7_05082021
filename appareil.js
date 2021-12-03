@@ -13,6 +13,7 @@ var madiv = document.createElement('div');
 var monp = document.createElement('p');
 var monx = document.createElement('i');
 
+const filtred = []
 
 
 showapp(recipes); // initialisation des filtres 
@@ -66,38 +67,79 @@ function showapp (appvar) {
 
 }
 
-var filtred = []
 
 const monapp2 = () => {
     var text1 = document.querySelectorAll('.monli')
     text1.forEach((appp) => {
         appp.addEventListener('click', () => {
+            filtred.push(appp.id)
+            displayfilters(filtred)
 
-            monx.id = "closer";
-            monx.className = "fas fa-times-circle"
-            monp.textContent = appp.id;
-            monp.className ="filter"
-            madiv.appendChild(monp)
-            madiv.appendChild(monx)
-            mabarre.appendChild(madiv)
-            verifmabarre()
-
-
-            document.getElementById('closer').addEventListener('click', () => {
-                madiv.remove(monp)
-                madiv.remove(monx)
-                verifmabarre()
-
-                
-            })
-            
- 
         })
     })
     
     
 }
 
+
+function displayfilters(tab) {
+    var tab = Array.from(new Set(tab));
+    console.log(tab)
+    mabarre.innerHTML = ""
+    mesrecettes=[]
+    for (var i = 0; i < tab.length; i++) {
+        var madiv = document.createElement('div');
+        var monp = document.createElement('p');
+        var monx = document.createElement('i');
+        madiv.id = "filteronbar"
+        monx.className = "fas fa-times-circle";
+        monp.textContent = tab[i];
+        madiv.appendChild(monp);
+        madiv.appendChild(monx);
+        mabarre.appendChild(madiv);
+        
+    }
+
+    var nam = document.querySelectorAll('.pname')
+
+    for (var i = 0; i < nam.length; i++) {
+
+        const recipe1 = recipes.filter(recet => {
+
+            return recet.name.toLowerCase() == nam[i].innerText.toLowerCase()
+            
+
+        })
+        mesrecettes.push(recipe1)
+        
+    }
+    console.log(mesrecettes)
+
+
+    for (var i = 0; i < tab.length; i++){
+        const result = recipes.filter(recette => {
+        return recette.appliance.toLowerCase().includes(tab[i].toLowerCase())
+            || recette.ingredients.some((ingredient) => ingredient.ingredient.toLowerCase().includes(tab[i].toLowerCase()))
+            || recette.ustensils.some((ustensil) => ustensil.toLowerCase().includes(tab[i].toLowerCase()));
+        });
+        displayResult(result)
+    }
+    
+}
+
+const croix = () => {
+    var croix1 = document.querySelectorAll('.filteronbar')
+    croix1.forEach((div1) => {
+        div1.addEventListener('click', () => {
+            mabarre.remove(div1)
+            
+            displayfilters(filtred)
+
+        })
+    })
+    
+    
+}
 
 
 
@@ -130,6 +172,9 @@ searchApp.addEventListener('keyup', (e) => {
     }
 })
     
+
+
+
 
 
 

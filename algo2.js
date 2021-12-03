@@ -32,11 +32,13 @@ function displayResult(result) {
     let filtres = document.querySelector(".appul");
     filtres.innerHTML = ""
     filtres2.innerHTML = ""
+    filtres3.innerHTML = ""
     main.innerHTML = ""
     let data = result ? result : recipes;
     verifrecipes(data);
     showapp(data)
     showusten(data)
+    showing(data)
     monapp2()
     moning2()
     monusten2()
