@@ -7,10 +7,12 @@ searchBar.addEventListener('keyup', (e) => { // quand l'utilisateur commence à 
 
     if (charrech.length < 2) { // si il écrit plus de 2 caracteres 
         main.innerHTML = "" // vider mon main 
-        filtres.innerHTML = "" // vider les filtres 
+        filtres.innerHTML = ""
+        filtres2.innerHTML = ""
+        filtres3.innerHTML = "" // vider les filtres
         recipearemp = [] // vider mon tableau 
         verifrecipes(recipes) // afficher toutes mes recettes 
-        showapp(recipes) // afficher tout les appareils
+        displayChoiceFilters(recipes) // afficher tout les appareils
         return;
     }
     for (var i = 0; i < recipes.length; i++) { // pour chaque recette 
@@ -32,9 +34,11 @@ searchBar.addEventListener('keyup', (e) => { // quand l'utilisateur commence à 
     }
 
     main.innerHTML = ""; // vider le main ou les recette vont s'afficher 
-    filtres.innerHTML = "" // vider les filtres ou les appreils, ustensils, ingrédient de mes recettes vont s'afficehr 
+    filtres.innerHTML = ""
+    filtres2.innerHTML = ""
+    filtres3.innerHTML = ""// vider les filtres ou les appreils, ustensils, ingrédient de mes recettes vont s'afficehr 
     verifrecipes(recipearemp); // vérifier si mon tableau n'est pas vide et afficher les recettes 
-    showapp(recipearemp) // afficher les appareils 
+    displayChoiceFilters(recipearemp) // afficher les appareils 
 
 
     
