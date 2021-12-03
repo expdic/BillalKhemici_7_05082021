@@ -13,6 +13,7 @@ searchBar.addEventListener('keyup', (e) => { // quand l'utilisateur commence à 
         recipearemp = [] // vider mon tableau 
         verifrecipes(recipes) // afficher toutes mes recettes 
         displayChoiceFilters(recipes) // afficher tout les appareils
+        actualisationChoiceFilters()
         return;
     }
     for (var i = 0; i < recipes.length; i++) { // pour chaque recette 
@@ -39,6 +40,7 @@ searchBar.addEventListener('keyup', (e) => { // quand l'utilisateur commence à 
     filtres3.innerHTML = ""// vider les filtres ou les appreils, ustensils, ingrédient de mes recettes vont s'afficehr 
     verifrecipes(recipearemp); // vérifier si mon tableau n'est pas vide et afficher les recettes 
     displayChoiceFilters(recipearemp) // afficher les appareils 
+    actualisationChoiceFilters()
 
 
     
