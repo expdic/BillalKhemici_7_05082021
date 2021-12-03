@@ -36,12 +36,8 @@ function displayResult(result) {
     main.innerHTML = ""
     let data = result ? result : recipes;
     verifrecipes(data);
-    showapp(data)
-    showusten(data)
-    showing(data)
-    monapp2()
-    moning2()
-    monusten2()
+    displayChoiceFilters(data)
+    actualisationChoiceFilters()
 
 }
 

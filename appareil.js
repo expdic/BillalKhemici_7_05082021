@@ -93,6 +93,9 @@ function displayfilters(tab) {
         var monx = document.createElement('i');
         madiv.id = "filteronbar"
         monx.className = "fas fa-times-circle";
+        monx.addEventListener("click", (event) => {
+            removefilter(event.target.parentNode)
+        })
         monp.textContent = tab[i];
         madiv.appendChild(monp);
         madiv.appendChild(monx);
@@ -100,53 +103,41 @@ function displayfilters(tab) {
         
     }
 
-    var nam = document.querySelectorAll('.pname')
 
-    for (var i = 0; i < nam.length; i++) {
-
-        const recipe1 = recipes.filter(recet => {
-
-            return recet.name.toLowerCase() == nam[i].innerText.toLowerCase()
-            
-
-        })
-        mesrecettes.push(recipe1)
-        
-    }
-    console.log(mesrecettes)
+    let result = recipes
 
 
     for (var i = 0; i < tab.length; i++){
-        const result = recipes.filter(recette => {
+        result = result.filter(recette => {
         return recette.appliance.toLowerCase().includes(tab[i].toLowerCase())
             || recette.ingredients.some((ingredient) => ingredient.ingredient.toLowerCase().includes(tab[i].toLowerCase()))
             || recette.ustensils.some((ustensil) => ustensil.toLowerCase().includes(tab[i].toLowerCase()));
         });
-        displayResult(result)
+        
     }
+
+    displayResult(result)
     
 }
+function removefilter(filter) {
+    tab =[]
+    console.log(mabarre.childNodes[0].textContent)
+    filter.parentNode.removeChild(filter);
+   
+    for (var i = 0; i < mabarre.childNodes.length; i++) {
+        tab.push(mabarre.childNodes[i].textContent)
 
-const croix = () => {
-    var croix1 = document.querySelectorAll('.filteronbar')
-    croix1.forEach((div1) => {
-        div1.addEventListener('click', () => {
-            mabarre.remove(div1)
-            
-            displayfilters(filtred)
 
-        })
-    })
-    
-    
+    }
+    let filtred = tab
+    displayfilters(filtred)
+
+
 }
-
-
 
 searchApp.addEventListener('keyup', (e) => {
     charrech = e.target.value.toLowerCase();
     apparemp = []
-    var monint = []
 
     
     if (charrech.length > 2) {
@@ -178,19 +169,3 @@ searchApp.addEventListener('keyup', (e) => {
 
 
 
-//**ddd */
-
-function verifmabarre() {
-    var tab =[]
-    if (document.querySelectorAll('.filter').length === 0){
-        displayResult();
-    }
-
-    else {
-        for (var i = 0; i < document.querySelectorAll('.filter').length; i++){
-            tab.push(document.querySelectorAll('.filter')[i].innerText.toLowerCase());
-            console.log(research(tab[i]));
-
-        }
-    } 
-}

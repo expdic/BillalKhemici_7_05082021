@@ -1,12 +1,11 @@
 const ustenfleche = document.getElementById('flecheusten');
 var playedusten = document.querySelector(".playusten");
 var iusten = document.querySelector(".iusten");
-var filtres2 = document.querySelector(".ustenul");;
+var filtres2 = document.querySelector(".ustenul");
 const searchUsten = document.getElementById('searchusten');
 const monint2 = [];
-var ustenSelectionned = [];
+
 showusten(recipes);
-showMonUsten(ustenSelectionned);
 
 ustenfleche.addEventListener("click", () => {
     if (playedusten.classList[1] == "unplayed") {
@@ -31,7 +30,7 @@ ustenfleche.addEventListener("click", () => {
 
 
 function showusten(ustenvar) {
-    var usten = [];
+var usten = [];
     for (var i = 0; i < ustenvar.length; i++) {
         for (var m = 0; m < ustenvar[i].ustensils.length; m++) { 
             usten.push(ustenvar[i].ustensils[m]);
@@ -45,25 +44,26 @@ function showusten(ustenvar) {
         myli2.textContent = usten[j];
         filtres2.appendChild(myli2);
     }
+   
+
+    /*var appl = []
+    for (var i = 0; i < appvar.length; i++) {
+        appl.push(appvar[i].ustensils)
+    }
+
+    var appl = Array.from(new Set(appl));
+    console.log(appl)
+    for (var j = 0; j < appl.length; j++) {
+        var myli = document.createElement('li');
+        myli.className = "monli2"
+        myli.id = appl[j];
+        myli.textContent = appl[j];
+        let filtres = document.querySelector(".ustenul");
+        filtres.appendChild(myli)
+    }*/
 }
 
-function showMonUsten(ustenSelectionned) {
-    ustenSelectionned.forEach((ustenn) => {
-        ustenn.addEventListener('click', () => {
-            var madiv2 = document.createElement('div');
-            var monp2 = document.createElement('p');
-            var monx2 = document.createElement('i');
-            monx2.id = ustenn.id;
-            monx2.className = "fas fa-times-circle";
-            monp2.textContent = ustenn.id;
-            madiv2.className = ustenn.id;
-            madiv2.appendChild(monp2);
-            madiv2.appendChild(monx2);
-            mabarre.appendChild(madiv2);
-        });
-    
-    });
-}
+
             
 const monusten2 = () => {
     var text2 = document.querySelectorAll('.monli2');
