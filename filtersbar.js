@@ -37,17 +37,15 @@ function displayfilters(tab) {
 }
 
 function removefilter(filter) {
-    tab =[]
-    console.log(mabarre.childNodes[0].textContent)
     filter.parentNode.removeChild(filter);
-   
+    filtred.splice(0)
     for (var i = 0; i < mabarre.childNodes.length; i++) {
-        tab.push(mabarre.childNodes[i].textContent)
+        filtred.push(mabarre.childNodes[i].textContent)
 
 
     }
-    let filtred = tab
+
     displayfilters(filtred)
 
-
+ 
 }
