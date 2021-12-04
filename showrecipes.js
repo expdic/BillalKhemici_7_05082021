@@ -61,10 +61,6 @@ function showrecipes(recipvar) {
 
 } // cette fonction a pour but d'afficher les recettes et les mettres dans des balises html 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d83e480 (modif)
 function verifrecipes(recipa) {
 
     if (recipa.length == 0) { // si mon tableau est vide 
@@ -82,8 +78,4 @@ function verifrecipes(recipa) {
     )
 }
 
-<<<<<<< HEAD
-verifrecipes(recipes) 
-=======
 verifrecipes(recipes)
->>>>>>> d83e480 (modif)
