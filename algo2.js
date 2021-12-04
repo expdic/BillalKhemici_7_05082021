@@ -17,11 +17,10 @@ function research(charrech) {
     const result = recipes.filter(recette => {
         return recette.name.toLowerCase().includes(charrech)
             || recette.description.toLowerCase().includes(charrech)
-            || recette.appliance.toLowerCase().includes(charrech)
-            || recette.ingredients.some((ingredient) => ingredient.ingredient.toLowerCase().includes(charrech))
-            || recette.ustensils.some((ustensil) => ustensil.toLowerCase().includes(charrech));
+            || recette.ingredients.some((ingredient) => ingredient.ingredient.toLowerCase().includes(charrech));
 
     });
+    
     return result 
     
     
