@@ -6,16 +6,19 @@ searchBar.addEventListener('keyup', (e) => { // quand l'utilisateur commence à 
     charrech = e.target.value.toLowerCase(); // récuperer ce qu'il ecrit et le mettre en miniscule 
 
     if (charrech.length < 2) { // si il écrit plus de 2 caracteres 
-        main.innerHTML = "" // vider mon main 
-        filtres.innerHTML = ""
-        filtres2.innerHTML = ""
-        filtres3.innerHTML = "" // vider les filtres
-        recipearemp = [] // vider mon tableau 
-        verifrecipes(recipes) // afficher toutes mes recettes 
-        displayChoiceFilters(recipes) // afficher tout les appareils
-        actualisationChoiceFilters()
-        return;
+        displayResult()
     }
+    else {
+        var rech = research(charrech)
+        displayResult(rech)
+    }
+
+    
+
+    
+})
+
+function research(charrech) {
     for (var i = 0; i < recipes.length; i++) { // pour chaque recette 
 
         for (var k = 0; k < recipes[i].ingredients.length; k++) { // pour chaque ingrédient de la recette 
@@ -34,17 +37,24 @@ searchBar.addEventListener('keyup', (e) => { // quand l'utilisateur commence à 
         }
     }
 
-    main.innerHTML = ""; // vider le main ou les recette vont s'afficher 
+    return recipearemp
+    
+    
+}
+
+
+function displayResult(result) {
+    let filtres = document.querySelector(".appul");
     filtres.innerHTML = ""
     filtres2.innerHTML = ""
-    filtres3.innerHTML = ""// vider les filtres ou les appreils, ustensils, ingrédient de mes recettes vont s'afficehr 
-    verifrecipes(recipearemp); // vérifier si mon tableau n'est pas vide et afficher les recettes 
-    displayChoiceFilters(recipearemp) // afficher les appareils 
+    filtres3.innerHTML = ""
+    main.innerHTML = ""
+    let data = result ? result : recipes;
+    verifrecipes(data);
+    displayChoiceFilters(data)
     actualisationChoiceFilters()
 
-
-    
-})
+}
 
 
     
