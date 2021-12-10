@@ -19,6 +19,7 @@ header {
   justify-content: center;
   margin: 1rem;
 }
+
 header img {
   height: 8rem;
 }
@@ -29,6 +30,7 @@ header img {
   width: 100%;
   margin-bottom: 2rem;
 }
+
 .barderecherche input {
   border-radius: 0.313rem 0 0 0.313rem;
   border: none;
@@ -38,6 +40,7 @@ header img {
   background-color: #E7E7E7;
   font-size: 100%;
 }
+
 .barderecherche button {
   border: none;
   padding-right: 1rem;
@@ -56,38 +59,42 @@ main {
 
 article {
   display: block;
+  width: 360px;
 }
 
 .divvide {
-  background-color: #fda862;
+  background-color: #C7BEBE;
   border-radius: 0.313rem 0.313rem 0 0;
   height: 9.375rem;
 }
 
 .sectioninfo {
   padding: 0.5rem 1rem 2rem 1rem;
-  background-color: #e7e7e7bd;
+  background-color: #E7E7E7;
   border-radius: 0 0 0.313rem 0.313rem;
   display: block;
 }
+
 .sectioninfo div {
   display: flex;
   justify-content: space-between;
   font-size: 10px;
   margin: 0;
 }
+
 .sectioninfo div .pname {
   display: block;
-  font-size: 1.5em;
+  font-size: 1.1rem;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
 }
+
 .sectioninfo div .ptime {
   display: block;
-  font-size: 1.5em;
+  font-size: 1.1rem;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
   margin-inline-start: 0px;
@@ -96,9 +103,13 @@ article {
   flex-direction: row-reverse;
   margin-right: 0.1rem;
 }
-.sectioninfo div .ptime i {
-  margin-left: 0.2rem;
+
+.sectioninfo div .fa-clock {
+  margin-top: 0.9rem;
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
 }
+
 .sectioninfo aside {
   align-items: center;
   display: grid;
@@ -109,6 +120,7 @@ article {
   height: 110px;
   font-size: 12px;
 }
+
 .sectioninfo aside ul {
   list-style-type: none;
   padding: 0;
@@ -116,6 +128,7 @@ article {
   align-self: start;
   font-size: 12px;
 }
+
 .sectioninfo .pdescription {
   height: 118px;
   margin: 0;
@@ -125,10 +138,11 @@ article {
 }
 
 .divnoresult {
-  font-size: 2rem;
+  font-size: 3rem;
   font-style: italic;
   grid-column: span 3;
   text-align: center;
+  background-color: #edf1e9;
 }
 
 .played {
@@ -141,27 +155,30 @@ article {
 
 .formfiltre {
   display: flex;
-  height: 70px;
-  width: 100%;
+  height: 69px;
+  width: 107px;
   margin-bottom: 1rem;
 }
+
 .formfiltre input {
   border: none;
   padding: 0 0 0 1rem;
   width: 100px;
-  background-color: #1962d1;
+  background-color: #3282F7;
   border-radius: 5px 0 0 5px;
 }
+
 .formfiltre input::placeholder {
   color: white;
 }
+
 .formfiltre button {
   border: none;
   margin: 0;
   padding: 0 1rem;
   box-sizing: border-box;
   color: white;
-  background-color: #1962d1;
+  background-color: #3282F7;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
 }
@@ -171,6 +188,7 @@ article {
   grid-row: 2;
   margin-top: -2rem;
 }
+
 .playapp ul {
   position: absolute;
   align-items: center;
@@ -179,12 +197,13 @@ article {
   grid-template-columns: repeat(3, 2fr);
   grid-template-rows: 1fr;
   justify-content: center;
-  background-color: #1962d1;
+  background-color: #3282F7;
   color: white;
   padding: 1rem;
   border-radius: 0 5px 5px 5px;
   margin: 0;
 }
+
 .playapp ul li {
   padding: 0rem 0rem 0rem 1rem;
   text-align: left;
@@ -196,7 +215,9 @@ article {
   grid-column: 1/span 6;
   grid-row: 2;
   margin-top: -2rem;
+  margin-left: -2rem;
 }
+
 .playusten ul {
   position: absolute;
   align-items: center;
@@ -205,13 +226,14 @@ article {
   grid-template-columns: repeat(3, 2fr);
   grid-template-rows: 1fr;
   justify-content: center;
-  background-color: #da4c4c;
+  background-color: #ED6454;
   color: white;
   padding: 1rem;
   border-radius: 0 5px 5px 5px;
   margin: 0;
   margin-left: 12.5rem;
 }
+
 .playusten ul li {
   padding: 0rem 0rem 0rem 1rem;
   text-align: left;
@@ -220,18 +242,30 @@ article {
 }
 
 #searchusten {
-  background-color: #da4c4c;
+  background-color: #ED6454;
+  margin-left: -2rem;
 }
 
 #flecheusten {
-  background-color: #da4c4c;
+  background-color: #ED6454;
+}
+
+#searching {
+  background-color: #68D9A4;
+  margin-left: -4rem;
+}
+
+#flecheing {
+  background-color: #68D9A4;
 }
 
 .playing {
   grid-column: 1/span 6;
   grid-row: 2;
   margin-top: -2rem;
+  margin-left: -4rem;
 }
+
 .playing ul {
   position: absolute;
   align-items: center;
@@ -240,13 +274,14 @@ article {
   grid-template-columns: repeat(3, 2fr);
   grid-template-rows: 1fr;
   justify-content: center;
-  background-color: #da4c4c;
+  background-color: #68D9A4;
   color: white;
   padding: 1rem;
   border-radius: 0 5px 5px 5px;
   margin: 0;
   margin-left: 25.1rem;
 }
+
 .playing ul li {
   padding: 0rem 0rem 0rem 1rem;
   text-align: left;
@@ -268,19 +303,30 @@ article {
   flex-wrap: wrap;
   gap: 1rem;
 }
+
 .mabarre div {
   align-items: center;
-  background-color: #b81c1c;
+  background-color: #3282F7;
   border-radius: 2px;
   color: white;
   display: flex;
   justify-content: center;
   margin-bottom: 0.5rem;
   padding: 0.5rem;
+  width: auto;
+  height: 37px;
 }
+
 .mabarre div i {
-  margin-left: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
   cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.mabarre div p {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
 }
 
 /*# sourceMappingURL=main.css.map */
