@@ -3,6 +3,7 @@ function showrecipes(recipvar) {
     for (var i = 0; i < recipvar.length; i++) {
         var myArticle = document.createElement('article');
         var divvide = document.createElement('div');
+        var time = document.createElement('div');
         divvide.className = 'divvide';
         var sectioninfo = document.createElement('section');
         sectioninfo.className = 'sectioninfo';
@@ -51,8 +52,9 @@ function showrecipes(recipvar) {
         sectioninfo.appendChild(divheader);
         sectioninfo.appendChild(aside);
         divheader.appendChild(pname);
-        ptime.appendChild(clock)
-        divheader.appendChild(ptime);
+        time.appendChild(clock)
+        time.appendChild(ptime)
+        divheader.appendChild(time);
         aside.appendChild(pul);
         aside.appendChild(pdescription);
             
@@ -68,7 +70,7 @@ function verifrecipes(recipa) {
         divnoresult.className = 'divnoresult';
         var pnoresult = document.createElement('p');
         pnoresult.className = 'pnoresult';
-        pnoresult.textContent = ' Veuillez renouveler vos recherches car nous n avons rien trouvé '
+        pnoresult.textContent = ' « Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.'
         divnoresult.appendChild(pnoresult);
         main.appendChild(divnoresult); // AFFICHER qu'il n'y pas de résultats 
     }

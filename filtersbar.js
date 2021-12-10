@@ -8,7 +8,7 @@ function displayfilters(tab) {
         var monp = document.createElement('p');
         var monx = document.createElement('i');
         madiv.id = "filteronbar"
-        monx.className = "fas fa-times-circle";
+        monx.className = "far fa-times-circle";
         monx.addEventListener("click", (event) => {
             removefilter(event.target.parentNode)
         })

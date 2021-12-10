@@ -1,72 +1,53 @@
+function displayselect(choix, pourdiv, pourfleche) {
+    if (choix == "afficher") {
+        pourdiv.classList.replace("unplayed", "played");
+        pourfleche.classList.replace("fa-chevron-down", "fa-chevron-up");
+        
+    }
 
+    else {
+        pourdiv.classList.replace("played", "unplayed");
+        pourfleche.classList.replace("fa-chevron-up", "fa-chevron-down");
+
+    }
+}
 
 Appfleche.addEventListener("click", () => {
-
     if (playedapp.classList[1] == "unplayed") {
-
-        playedapp.classList.replace("unplayed", "played");
-        iapp.classList.replace("fa-chevron-down", "fa-chevron-up");
-        
-        playedusten.classList.replace("played", "unplayed");
-        iusten.classList.replace("fa-chevron-up", "fa-chevron-down");
-
-        playeding.classList.replace("played", "unplayed");
-        iing.classList.replace("fa-chevron-up", "fa-chevron-down");
-    
+        displayselect("afficher", playedapp, iapp);
+        displayselect("pasafficher", playedusten, iusten);
+        displayselect("pasafficher", playeding, iing);
     }
 
     else if (playedapp.classList[1] == "played") {
-        playedapp.classList.replace("played", "unplayed");
-        iapp.classList.replace("fa-chevron-up", "fa-chevron-down");
+        displayselect("pasafficher", playedapp, iapp);
     }
-
     actualisationChoiceFilters()
-    
 })
 
 ustenfleche.addEventListener("click", () => {
-
     if (playedusten.classList[1] == "unplayed") {
-
-        playedusten.classList.replace("unplayed", "played");
-        iusten.classList.replace("fa-chevron-down", "fa-chevron-up");
-
-        playedapp.classList.replace("played", "unplayed");
-        iapp.classList.replace("fa-chevron-up", "fa-chevron-down");
-
-        playeding.classList.replace("played", "unplayed");
-        iing.classList.replace("fa-chevron-up", "fa-chevron-down");
+        displayselect("afficher", playedusten, iusten);
+        displayselect("pasafficher", playedapp, iapp);
+        displayselect("pasafficher", playeding, iing);
     }
     else {
-        playedusten.classList.replace("played", "unplayed");
-        iusten.classList.replace("fa-chevron-up", "fa-chevron-down");
+        displayselect("pasafficher", playedusten, iusten);
     }
-
     actualisationChoiceFilters()
 });
 
 
 Ingfleche.addEventListener("click", () => {
-
     if (playeding.classList[1] == "unplayed") {
-
-        playeding.classList.replace("unplayed", "played");
-        iing.classList.replace("fa-chevron-down", "fa-chevron-up");
-
-        playedusten.classList.replace("played", "unplayed");
-        iusten.classList.replace("fa-chevron-up", "fa-chevron-down");
-
-        playedapp.classList.replace("played", "unplayed");
-        iapp.classList.replace("fa-chevron-up", "fa-chevron-down");
+        displayselect("afficher", playeding, iing);
+        displayselect("pasafficher", playedusten, iusten);
+        displayselect("pasafficher", playedapp, iapp);
     }
-
     else  {
-        playeding.classList.replace("played", "unplayed");
-        iing.classList.replace("fa-chevron-up", "fa-chevron-down");
+        displayselect("pasafficher", playeding, iing);
     }
-
     actualisationChoiceFilters()
-    
 })
 
 
